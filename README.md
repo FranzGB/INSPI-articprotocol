@@ -15,6 +15,10 @@
 
 El uso de los programas se los debe ejecutar de la siguiente forma:
 
+**Recomendaciones**
+- Crear una carpeta donde se va a llamar al paso #1.
+- La carpeta principal va a contener una carpeta por cada muestra a procesar. Reproducir los pasos adentro del directorio de cada una de las muestras.
+
 1. Indexar el genoma de referencia
 
 ``` shell
