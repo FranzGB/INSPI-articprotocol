@@ -1,0 +1,7 @@
+#Folders with the output files of the processes
+muestra1/
+muestra2/
+muestra3/
+muestra4/
+#Files resulting from indexing the sample genome
+references.fa.*

@@ -1,10 +1,10 @@
-# INSPI-articprotocol
+l# INSPI-articprotocol
 
 ## Recursos 
 
 - Burrows-Wheeler Aligner (bwa) --> gcc, make, zlib 
 - samtools, bcftools, htslib --> """"""
-
+- tabix
 ---
 
 ## Workflow actual
