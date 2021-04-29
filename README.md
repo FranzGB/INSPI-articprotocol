@@ -24,6 +24,7 @@ El uso de los programas se los debe ejecutar de la siguiente forma:
 ``` shell
 
 ./bwa index [genomaRef.fa] 
+  samtools faidx [genomaRef.fa]
 
 ```
 

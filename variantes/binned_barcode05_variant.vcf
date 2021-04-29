@@ -1,0 +1,45 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##bcftoolsVersion=1.10.2+htslib-1.10.2-3
+##bcftoolsCommand=mpileup -O b -o cobertura/binned_barcode05_raw.bcf -f data/references.fasta sorted_reads/binned_barcode05.bam
+##reference=file://data/references.fasta
+##contig=<ID=nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12,length=29904>
+##ALT=<ID=*,Description="Represents allele(s) other than observed.">
+##INFO=<ID=INDEL,Number=0,Type=Flag,Description="Indicates that the variant is an INDEL.">
+##INFO=<ID=IDV,Number=1,Type=Integer,Description="Maximum number of raw reads supporting an indel">
+##INFO=<ID=IMF,Number=1,Type=Float,Description="Maximum fraction of raw reads supporting an indel">
+##INFO=<ID=DP,Number=1,Type=Integer,Description="Raw read depth">
+##INFO=<ID=VDB,Number=1,Type=Float,Description="Variant Distance Bias for filtering splice-site artefacts in RNA-seq data (bigger is better)",Version="3">
+##INFO=<ID=RPB,Number=1,Type=Float,Description="Mann-Whitney U test of Read Position Bias (bigger is better)">
+##INFO=<ID=MQB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality Bias (bigger is better)">
+##INFO=<ID=BQB,Number=1,Type=Float,Description="Mann-Whitney U test of Base Quality Bias (bigger is better)">
+##INFO=<ID=MQSB,Number=1,Type=Float,Description="Mann-Whitney U test of Mapping Quality vs Strand Bias (bigger is better)">
+##INFO=<ID=SGB,Number=1,Type=Float,Description="Segregation based metric.">
+##INFO=<ID=MQ0F,Number=1,Type=Float,Description="Fraction of MQ0 reads (smaller is better)">
+##FORMAT=<ID=PL,Number=G,Type=Integer,Description="List of Phred-scaled genotype likelihoods">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=ICB,Number=1,Type=Float,Description="Inbreeding Coefficient Binomial test (bigger is better)">
+##INFO=<ID=HOB,Number=1,Type=Float,Description="Bias in the number of HOMs number (smaller is better)">
+##INFO=<ID=AC,Number=A,Type=Integer,Description="Allele count in genotypes for each ALT allele, in the same order as listed">
+##INFO=<ID=AN,Number=1,Type=Integer,Description="Total number of alleles in called genotypes">
+##INFO=<ID=DP4,Number=4,Type=Integer,Description="Number of high-quality ref-forward , ref-reverse, alt-forward and alt-reverse bases">
+##INFO=<ID=MQ,Number=1,Type=Integer,Description="Average mapping quality">
+##bcftools_callVersion=1.10.2+htslib-1.10.2-3
+##bcftools_callCommand=call --ploidy 1 -m -v -o variantes/binned_barcode05_variant.vcf cobertura/binned_barcode05_raw.bcf; Date=Wed Apr 28 20:58:30 2021
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	sorted_reads/binned_barcode05.bam
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	241	.	C	T	112	.	DP=23;VDB=0.258434;SGB=-0.616816;MQSB=0.875;MQ0F=0;AC=1;AN=1;DP4=0,0,2,4;MQ=47	GT:PL	1:142,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	3037	.	C	T	225	.	DP=115;VDB=3.64243e-35;SGB=-0.693147;MQSB=0.956529;MQ0F=0;AC=1;AN=1;DP4=0,0,50,30;MQ=59	GT:PL	1:255,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	5388	.	C	A	85	.	DP=197;VDB=6.45617e-25;SGB=-0.693147;RPB=0.998965;MQB=0.833442;MQSB=0.993093;BQB=4.37736e-05;MQ0F=0;AC=1;AN=1;DP4=49,3,46,11;MQ=59	GT:PL	1:234,121
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	10507	.	C	T	10.8066	.	DP=75;VDB=4.33876e-16;SGB=-0.693127;RPB=0.71196;MQB=0.965065;MQSB=0.76417;BQB=0.874808;MQ0F=0;AC=1;AN=1;DP4=22,2,30,3;MQ=59	GT:PL	1:154,116
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	14408	.	C	T	88	.	DP=93;VDB=8.07455e-16;SGB=-0.693127;MQSB=1;MQ0F=0;AC=1;AN=1;DP4=0,0,32,1;MQ=60	GT:PL	1:118,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	14676	.	C	T	52	.	DP=234;VDB=1.80092e-19;SGB=-0.693147;RPB=0.675723;MQB=0.980313;MQSB=0.990766;BQB=0.697094;MQ0F=0;AC=1;AN=1;DP4=32,9,26,24;MQ=59	GT:PL	1:234,154
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	18877	.	C	T	54	.	DP=119;VDB=2.00913e-17;SGB=-0.693147;RPB=0.870686;MQB=0.979189;MQSB=0.626889;BQB=1.44731e-05;MQ0F=0;AC=1;AN=1;DP4=28,9,33,24;MQ=58	GT:PL	1:255,174
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	22132	.	G	A	4.33355	.	DP=84;VDB=0.000989572;SGB=-0.686358;RPB=0.573564;MQB=0.918828;MQSB=0.918828;BQB=0.826565;MQ0F=0;AC=1;AN=1;DP4=5,7,9,5;MQ=58	GT:PL	1:168,138
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	23063	.	A	T	50	.	DP=12;VDB=0.0117389;SGB=-0.556411;MQSB=1;MQ0F=0;AC=1;AN=1;DP4=0,0,2,2;MQ=60	GT:PL	1:80,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	23403	.	A	G	225	.	DP=218;VDB=0;SGB=-0.693147;MQSB=0.956522;MQ0F=0;AC=1;AN=1;DP4=0,0,69,67;MQ=59	GT:PL	1:255,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	23604	.	C	A	96	.	DP=42;VDB=0.00051968;SGB=-0.689466;RPB=0.725112;MQB=0.896394;MQSB=0.834599;BQB=0.85106;MQ0F=0;AC=1;AN=1;DP4=6,1,10,6;MQ=56	GT:PL	1:163,40
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	28331	.	C	T	91	.	DP=246;VDB=8.23729e-15;SGB=-0.693147;RPB=0.989296;MQB=0.990917;MQSB=0.999964;BQB=0.559432;MQ0F=0;AC=1;AN=1;DP4=47,6,125,14;MQ=59	GT:PL	1:228,110
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	28881	.	G	A	228	.	DP=183;VDB=6.78441e-31;SGB=-0.693147;RPB=0.447194;MQB=0.99881;MQSB=0.991465;BQB=0.0209031;MQ0F=0;AC=1;AN=1;DP4=0,8,39,57;MQ=59	GT:PL	1:255,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	28882	.	G	A	153	.	DP=202;VDB=3.44357e-30;SGB=-0.693147;RPB=0.525727;MQB=0.971334;MQSB=0.981415;BQB=0.311411;MQ0F=0;AC=1;AN=1;DP4=0,21,24,55;MQ=59	GT:PL	1:199,19
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	28883	.	G	C	123	.	DP=204;VDB=9.76064e-32;SGB=-0.693147;RPB=0.193848;MQB=0.984773;MQSB=0.999448;BQB=0.0298524;MQ0F=0;AC=1;AN=1;DP4=1,20,40,51;MQ=59	GT:PL	1:150,0
+nCoV2019|Wuhan-Hu-1|MN908947|China|Wuhan|2019-12	28977	.	C	T	118	.	DP=196;VDB=0;SGB=-0.693147;RPB=0.690343;MQB=0.97406;MQSB=0.780744;BQB=0.00186872;MQ0F=0;AC=1;AN=1;DP4=16,23,64,41;MQ=58	GT:PL	1:255,110

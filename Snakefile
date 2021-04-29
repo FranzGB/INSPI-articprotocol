@@ -1,5 +1,7 @@
 
-samples = ["binned_barcode05","binned_barcode06","binned_barcode07","binned_barcode08"]
+samples = ["binned_barcode05", "binned_barcode06", "binned_barcode07", "binned_barcode08"]
+
+
 
 rule all:
     input:
@@ -30,12 +32,12 @@ rule samtools_sort:
 
 rule cobertura:
      input:
-         "data/references.fasta",
-         rules.samtools_sort.output
+        ref = "data/references.fasta",
+        rl = rules.samtools_sort.output
      output:
      	 "cobertura/{sample}_raw.bcf"
      shell:
-     	 "bcftools mpileup -O b -o {output} -f {input}"	 
+     	 "bcftools mpileup -O b -o {output} -f {input.ref} {input.rl}"	 
 
 rule polimorfismo:
      input:
@@ -52,7 +54,7 @@ rule compress:
 	   "variantes/{sample}_variant.vcf.gz"
 	shell:
 	   "bgzip -c {input} > {output}"
-	
+
 rule indices:
 	input:
 	   rules.compress.output
@@ -61,10 +63,10 @@ rule indices:
 	shell:
 	   "tabix -p vcf {input}"
 
-rule consensus:
+rule consensos:
 	input:
 	   fasta = "data/references.fasta",
-	   gz = expand("variantes/{sample}_variant.vcf.gz", sample = samples)
+	   gz = rules.compress.output
 	output:
 	   "consensos/{sample}_consensus.fa"
 	shell:
