@@ -1,8 +1,9 @@
 #Folders with the output files of the processes
-muestra1/
-muestra2/
-muestra3/
-muestra4/
+cobertura/
+Alineamiento/
+sorted_reads/
+variantes/
 #Files resulting from indexing the sample genome
-references.fa.*
-prueba.txt
+data/references.fa
+data/references.fasta.*
+
